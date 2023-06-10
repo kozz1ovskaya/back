@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Yep_Back": {
+    "Carbon": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

@@ -11,7 +11,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Yep-ShopConnection"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Carbon"));
 });
 
 var app = builder.Build();

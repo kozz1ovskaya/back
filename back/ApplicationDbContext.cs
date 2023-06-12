@@ -9,6 +9,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Cart> Carts { get; set; } = null!;
     public DbSet<Authorization> Authorization { get; set; } = null!;
     public DbSet<UserLogin> UserLogin { get; set; } = null!;
+    public DbSet<Product> Product { get; set; } = null!;
+    public DbSet<Order> Order { get; set; } = null!;
 
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)

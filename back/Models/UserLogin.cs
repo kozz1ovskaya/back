@@ -6,7 +6,7 @@ namespace CarBon.Models
     [Table("UserLogin")]
     public class UserLogin
     {
-        [Required]
+        [Key]
         public int id { get; set; }
         [Required]
         public string login { get; set; }

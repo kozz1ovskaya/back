@@ -7,7 +7,7 @@ namespace CarBon.Models
 
     public class UserInfo
     {
-        [Required]
+        [Key]
         public int id { get; set; }
         [Required]
         public string name { get; set; }

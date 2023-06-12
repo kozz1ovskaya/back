@@ -1,6 +1,4 @@
-﻿
-using System.Linq;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using CarBon.Models;
 
 namespace CarBon.Controllers
@@ -20,21 +18,5 @@ namespace CarBon.Controllers
         {
             return _context.UserLogin.ToList();
         }
-
-        //[HttpPost]
-        //public IActionResult Authenticate(Authorization authorization)
-        //{
-        //    var user = _context.UserLogin.FirstOrDefault(u => u.login == authorization.login && u.password == authorization.password);
-
-        //    if (user == null)
-        //    {
-        //        return Unauthorized();
-        //    }
-
-        //    // Генерация токена доступа, если аутентификация прошла успешно.
-        //    // TODO: реализовать генерацию токена.
-
-        //    return Ok(new { token = "your_access_token" });
-        //}
     }
 }

@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-//using ReactApi.Data;
 using CarBon.Models;
-//namespace ReactApi.Data;
 
 public class ApplicationDbContext : DbContext
 {

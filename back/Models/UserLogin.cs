@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarBon.Models
 {
-    [Table("Cart")]
-    public class Cart
+    [Table("UserLogin")]
+    public class UserLogin
     {
         [Required]
         public int id { get; set; }
         [Required]
-        public string title { get; set; }
+        public string login { get; set; }
         [Required]
-        public long price { get; set; }
-        [Required]
-        public string image { get; set; }
+        public string password { get; set; }
+
     }
 }

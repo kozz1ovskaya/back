@@ -9,25 +9,25 @@ namespace CarBon.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class LoginController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public UserController(ApplicationDbContext context)
+        public LoginController(ApplicationDbContext context)
         {
             _context = context;
         }
 
         // GET: api/User
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUser()
+        public async Task<ActionResult<IEnumerable<UserLogin>>> GetUser()
         {
             return await _context.UserLogin.ToListAsync();
         }
 
         // GET: api/User/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<ActionResult<UserLogin>> GetUser(int id)
         {
             var user = await _context.UserLogin.FindAsync(id);
 
@@ -41,7 +41,7 @@ namespace CarBon.Controllers
 
         // PUT: api/User/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> PutUser(int id, UserLogin user)
         {
             if (id != user.id)
             {
@@ -71,7 +71,7 @@ namespace CarBon.Controllers
 
         // POST: api/User
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<UserLogin>> PostUser(UserLogin user)
         {
             _context.UserLogin.Add(user);
             await _context.SaveChangesAsync();
@@ -81,7 +81,7 @@ namespace CarBon.Controllers
 
         // DELETE: api/User/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteUser(string id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.UserLogin.FindAsync(id);
             if (user == null)

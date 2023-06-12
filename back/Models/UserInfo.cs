@@ -3,16 +3,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarBon.Models
 {
-    [Table("Cart")]
-    public class Cart
+    [Table("UserInfo")]
+
+    public class UserInfo
     {
         [Required]
         public int id { get; set; }
         [Required]
-        public string title { get; set; }
+        public string name { get; set; }
         [Required]
-        public long price { get; set; }
+        public string email { get; set; }
         [Required]
-        public string image { get; set; }
+        public long phone { get; set; }
+
     }
 }

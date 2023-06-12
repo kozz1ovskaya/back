@@ -5,8 +5,11 @@ using CarBon.Models;
 
 public class ApplicationDbContext : DbContext
 {
-    public DbSet<User> UserLogin { get; set; } = null!;
-   
+    public DbSet<UserInfo> UserInfo { get; set; } = null!;
+    public DbSet<Cart> Carts { get; set; } = null!;
+    public DbSet<Authorization> Authorization { get; set; } = null!;
+    public DbSet<UserLogin> UserLogin { get; set; } = null!;
+
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {

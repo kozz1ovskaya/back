@@ -6,8 +6,8 @@ namespace CarBon.Models
     [Table("Product")]
     public class Product
     {
-        public int Id { get; set; }
-        public int Price { get; set; }
-        public string Image { get; set; }
+        public int id { get; set; }
+        public int price { get; set; }
+        public string image { get; set; }
     }
 }

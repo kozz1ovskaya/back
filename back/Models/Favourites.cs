@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace CarBon.Models
+namespace back.Models
 {
-    [Table("Product")]
-    public class Product
+    [Table("Favourites")]
+    public class Favourites
     {
         public int id { get; set; }
         [Required]

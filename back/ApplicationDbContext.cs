@@ -1,24 +1,26 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CarBon.Models;
-using back.Models;
-
 public class ApplicationDbContext : DbContext
 {
-    public DbSet<UserInfo> UserInfo { get; set; } = null!;
-    public DbSet<Cart> Carts { get; set; } = null!;
-    public DbSet<Favourites> Favourites { get; set; } = null!;
-    public DbSet<UserLogin> UserLogin { get; set; } = null!;
-    public DbSet<Product> Product { get; set; } = null!;
-    public DbSet<Order> Order { get; set; } = null!;
+    public DbSet<UserInfo> UserInfo { get; set; }
+    public DbSet<Cart> Carts { get; set; }
+    public DbSet<Favourites> Favourites { get; set; } 
+    public DbSet<UserLogin> UserLogin { get; set; }
+    public DbSet<Product> Product { get; set; }
+    public DbSet<Order> Order { get; set; }
 
+    private readonly IConfiguration _configuration;
 
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration configuration) : base(options)
     {
+        _configuration = configuration;
         Database.EnsureCreated();
     }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer(@"Server=localhost;Database=u;Trusted_Connection=True;TrustServerCertificate=True;");
+        if (!optionsBuilder.IsConfigured)
+        {
+            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("Carbon"));
+        }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CarBon.Models;
-using System;
-using back.Models;
 
 namespace CarBon.Controllers
 {
@@ -17,14 +15,12 @@ namespace CarBon.Controllers
             _context = context;
         }
 
-        // GET: api/Favourites
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Favourites>>> GetFavourites()
         {
             return await _context.Favourites.ToListAsync();
         }
 
-        // GET: api/Favourites/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Favourites>> GetFavourites(int id)
         {
@@ -38,7 +34,6 @@ namespace CarBon.Controllers
             return favourites;
         }
 
-        // POST: api/Favourites
         [HttpPost]
         public async Task<ActionResult<Favourites>> PostFavourites(Product product)
         {

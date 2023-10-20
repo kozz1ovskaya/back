@@ -11,7 +11,6 @@ builder.Services.AddCors(options =>
     policy => policy.WithOrigins("http://localhost:3000")
     .AllowAnyHeader()
     .AllowAnyMethod()
-    .AllowAnyOrigin()
     );
 });
 
@@ -28,10 +27,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("ReactJSDomain");
+
 app.UseAuthorization();
 
 app.MapControllers();
-
-app.UseCors("ReactJSDomain");
 
 app.Run();

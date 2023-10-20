@@ -18,14 +18,14 @@ namespace CarBon.Controllers
             _context = context;
         }
 
-        // GET: api/User
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserLogin>>> GetUser()
         {
             return await _context.UserLogin.ToListAsync();
         }
 
-        // GET: api/User/5
+
         [HttpGet("{id}")]
         public async Task<ActionResult<UserLogin>> GetUser(int id)
         {
@@ -39,7 +39,6 @@ namespace CarBon.Controllers
             return user;
         }
 
-        // PUT: api/User/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserLogin user)
         {
@@ -69,7 +68,6 @@ namespace CarBon.Controllers
             return NoContent();
         }
 
-        // POST: api/User
         [HttpPost]
         public async Task<ActionResult<UserLogin>> PostUser(UserLogin user)
         {
@@ -79,7 +77,6 @@ namespace CarBon.Controllers
             return CreatedAtAction("GetUser", new { id = user.id }, user);
         }
 
-        // DELETE: api/User/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CarBon.Models;
 
 namespace CarBon.Controllers
@@ -18,14 +15,12 @@ namespace CarBon.Controllers
             _context = context;
         }
 
-        // GET: api/User
         [HttpGet]
         public async Task<ActionResult<IEnumerable<UserInfo>>> GetUser()
         {
             return await _context.UserInfo.ToListAsync();
         }
 
-        // GET: api/User/5
         [HttpGet("{id}")]
         public async Task<ActionResult<UserInfo>> GetUser(int id)
         {
@@ -39,7 +34,6 @@ namespace CarBon.Controllers
             return user;
         }
 
-        // PUT: api/User/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUser(int id, UserInfo user)
         {
@@ -69,7 +63,6 @@ namespace CarBon.Controllers
             return NoContent();
         }
 
-        // POST: api/User
         [HttpPost]
         public async Task<ActionResult<UserInfo>> PostUser(UserInfo user)
         {
@@ -79,7 +72,6 @@ namespace CarBon.Controllers
             return CreatedAtAction("GetUser", new { id = user.id }, user);
         }
 
-        // DELETE: api/User/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {

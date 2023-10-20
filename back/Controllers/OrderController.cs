@@ -15,14 +15,14 @@ namespace CarBon.Controllers
             _context = context;
         }
 
-        // GET: api/Order
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
             return await _context.Order.ToListAsync();
         }
 
-        // GET: api/Order/5
+
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)
         {
@@ -36,7 +36,7 @@ namespace CarBon.Controllers
             return order;
         }
 
-        // PUT: api/Order/5
+
         [HttpPut("{id}")]
         public async Task<IActionResult> PutOrder(int id, Order order)
         {
@@ -66,7 +66,7 @@ namespace CarBon.Controllers
             return NoContent();
         }
 
-        // POST: api/Order
+
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
@@ -76,7 +76,7 @@ namespace CarBon.Controllers
             return CreatedAtAction("GetOrder", new { id = order.id }, order);
         }
 
-        // DELETE: api/Order/5
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
